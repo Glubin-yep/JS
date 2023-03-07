@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--?images=["1.jpg","2.jpg","3.gif"]-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.18</title>
+</head>
+
+<body>
+    <img id="image" src="">
+    <br>
+    <button id="back">Назад</button>
+    <button id="forward">Вперед</button>
+
+    <script>
+        const images = JSON.parse(decodeURIComponent(location.search.substr(1)).split("=")[1]);
+
+        let index = 0;
+        const img = document.getElementById("image");
+        const forwardBtn = document.getElementById("forward");
+        const backBtn = document.getElementById("back");
+
+        img.src = images[index];
+
+        forwardBtn.addEventListener("click", () => {
+            if (index < images.length - 1) {
+                index++;
+                img.src = images[index];
+            }
+        });
+
+        backBtn.addEventListener("click", () => {
+            if (index > 0) {
+                index--;
+                img.src = images[index];
+            }
+        });
+
+    </script>
+</body>
+
+</html>

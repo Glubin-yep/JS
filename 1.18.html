@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1.18</title>
+</head>
+
+<body>
+  <script>
+    const num1 = parseInt(prompt("Введіть перше число: "));
+    const num2 = parseInt(prompt("Введіть друге число: "));
+    const num3 = parseInt(prompt("Введіть третє число: "));
+
+    let choice = 0;
+
+    while (choice !== 4) {
+      choice = parseInt(prompt(`Виберіть опцію:
+  1. Знайти найменше число
+  2. Знайти два менших числа
+  3. Обчислити середнє арифметичне
+  4. Вийти з програми`));
+
+      switch (choice) {
+        case 1:
+          const minNum = Math.min(num1, num2, num3);
+          alert(`Найменше число: ${minNum}`);
+          break;
+        case 2:
+          const sortedNums = [num1, num2, num3].sort((a, b) => a - b);
+          alert(`Два менших числа: ${sortedNums[0]}, ${sortedNums[1]}`);
+          break;
+        case 3:
+          const avg = (num1 + num2 + num3) / 3;
+          alert(`Середнє арифметичне: ${avg}`);
+          break;
+        case 4:
+          alert("До побачення!");
+          break;
+        default:
+          alert("Введено неправильний вибір!");
+      }
+    }
+
+  </script>
+</body>
+
+</html>
